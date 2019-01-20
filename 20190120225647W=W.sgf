@@ -1,4 +1,4 @@
-= (;GM[1]FF[4]RU[Chinese]DT[2019-01-20]SZ[13]KM[7.5]TM[3600]PB[Leela Zero 0.16 13x13.tx]PW[Human]RE[W+41.5]
+(;GM[1]FF[4]RU[Chinese]DT[2019-01-20]SZ[13]KM[7.5]TM[3600]PB[Leela Zero 0.16 13x13.tx]PW[Human]RE[W+41.5]
 C[Leela Zero options: --gtp -w /home/fan/GoProjects/13x13.txt -p 1600 --noponder --seed 4529197364862356340]
 ;B[jd];W[dj]LB[ib:1][le:2][kc:3][kd:4][ck:5][jc:6][ke:7][ic:8][lc:9][ie:10][ld:11][kf:12][hc:13][hd:14][jf:15][tt:16][ed:17][jk:18][dc:19][je:20][dg:21][cc:22][kk:23][kj:24][cd:25][id:26][cj:27][dd:28][ge:29][hj:30][jj:31][dk:32][gc:33][dj:34][ik:35][ij:36][de:37][cf:38][ji:39][kg:40][hg:41][jg:42][ce:43][ec:44][ki:45][gd:46][gg:47][he:48][if:49][ej:50][di:51][ee:52][ii:53][fe:54][ih:55][ci:56][ek:57][hf:58]C[0.534116::the move 189 in board J12: visited Count 2 winrate is 0.615397and policy is 0.001248
 the move 147 in board M9: visited Count 3 winrate is 0.613098and policy is 0.001873
