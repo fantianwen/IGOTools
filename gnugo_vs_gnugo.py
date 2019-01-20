@@ -131,11 +131,11 @@ def saveSGF(str,winner):
     with open(timestamp+"W="+winner+".sgf", "w") as file:
         file.write(str)
 
-RAYGO = ["/home/fan/GoProjects/Ray/ray", "--playout", "4000","--size","13"]
+RAYGO = ["/home/ikeda-05444/users/fan/GoProjects/Ray/ray", "--playout", "4000","--size","13"]
 LEELAZ_NORMAL = ["/home/fan/GoProjects/leelaz13_normal/build/leelaz", "--gtp", "-w", "/home/fan/GoProjects/13x13.txt","-p","1600", "--noponder"]
-LEELAZ_tekake = ["/home/fan/GoProjects/leelaz13/build/leelaz13_c_param25_cp_10", "--gtp", "-w", "/home/fan/GoProjects/13x13.txt","-p","1600","--noponder"]
+LEELAZ_tekake = ["/home/ikeda-05444/users/fan/GoProjects/laalaz13E/build/leelaz13_c_param25_cp_10", "--gtp", "-w", "/home/fan/GoProjects/13x13.txt","-p","1600","--noponder"]
 GNUGO_MONTE_CARLO = ["gnugo", "--mode", "gtp", "--monte-carlo"]
-LEELAZ = ["/home/fan/GoProjects/leelaz13/build/leelaz", "--gtp", "-w", "/home/fan/GoProjects/13x13.txt","-p","1600","--noponder"]
+LEELAZ = ["/home/ikeda-05444/users/fan/GoProjects/laalaz13E/build/leelaz_25_15", "--gtp", "-w", "/home/ikeda-05444/users/fan/GoProjects/13x13.txt","-p","1600","--noponder"]
 
 #
 # black = GTPFacade("black", LEELAZ_tekake)
