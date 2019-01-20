@@ -173,6 +173,9 @@ while True:
     #         break
 
     white.play(BLACK, lastBlackMove)
+
+    whiteLastMove = lastBlackMove
+
     # white.showboard()
     white.genmove(WHITE)
     # time.sleep(5)
@@ -194,7 +197,6 @@ while True:
     #         saveSGF(black.printSgf())
     #         break
     black.play(WHITE, lastWhiteMove)
-    whiteLastMove = lastWhiteMove
     black.showboard()
 
     # time.sleep(3)
