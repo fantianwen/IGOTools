@@ -147,21 +147,15 @@ LEELAZ = ["/home/ikeda-05444/users/fan/GoProjects/laalaz13E/build/leelaz_25_15",
 
 # print("=======black is ready!!!==============")
 
-for _ in range(0,30):
+white = GTPFacade("white", LEELAZ)
+ # white = GTPFacade("white", GNUGO_LEVEL_ONE)
+black = GTPFacade("black", RAYGO)
 
-    white = GTPFacade("white", LEELAZ)
-    # white = GTPFacade("white", GNUGO_LEVEL_ONE)
-    black = GTPFacade("black", RAYGO)
-
-    firstPass = False
-    whiteLastMove = ""
-
+firstPass = False
+whiteLastMove = ""
     while True:
         black.genmove1(BLACK)
-        time.sleep(5)
-
         lastBlackMove = black.getLastMove()
-
         if "resign" in lastBlackMove or "pass" in lastBlackMove or "illegal" in lastBlackMove:
             saveSGF(white.printSgf(), "W")
             break

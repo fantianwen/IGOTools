@@ -10,7 +10,7 @@ except ImportError:
 
 winrates = []
 
-with open("/home/fan/GoProjects/gtp/20190121014443W=B.sgf") as f:
+with open("/home/fan/GoProjects/gtp/20190124200917W=W.sgf") as f:
     collection = sgf.parse(f.read())
     children = collection.children
     gameTree = children[0]
