@@ -153,46 +153,46 @@ black = GTPFacade("black", RAYGO)
 
 firstPass = False
 whiteLastMove = ""
-    while True:
-        black.genmove1(BLACK)
-        lastBlackMove = black.getLastMove()
-        if "resign" in lastBlackMove or "pass" in lastBlackMove or "illegal" in lastBlackMove:
-            saveSGF(white.printSgf(), "W")
-            break
+while True:
+    black.genmove1(BLACK)
+    lastBlackMove = black.getLastMove()
+    if "resign" in lastBlackMove or "pass" in lastBlackMove or "illegal" in lastBlackMove:
+        saveSGF(white.printSgf(), "W")
+        break
 
-    # if lastBlackMove == "pass":
-    #     if not firstPass:
-    #         firstPass = True
-    #     else:
-    #         saveSGF(black.printSgf())
-    #         break
+# if lastBlackMove == "pass":
+#     if not firstPass:
+#         firstPass = True
+#     else:
+#         saveSGF(black.printSgf())
+#         break
 
-        white.play(BLACK, lastBlackMove)
+    white.play(BLACK, lastBlackMove)
 
-        whiteLastMove = lastBlackMove
+    whiteLastMove = lastBlackMove
 
-    # white.showboard()
-        white.genmove(WHITE)
-    # time.sleep(5)
+# white.showboard()
+    white.genmove(WHITE)
+# time.sleep(5)
 
-        lastWhiteMove = white.getLastMove()
+    lastWhiteMove = white.getLastMove()
 
-        if lastWhiteMove == whiteLastMove:
-            saveSGF(white.printSgf(), "B")
-            break
+    if lastWhiteMove == whiteLastMove:
+        saveSGF(white.printSgf(), "B")
+        break
 
-        if lastWhiteMove == "" or "resign" in lastWhiteMove or "pass" in lastWhiteMove or "illegal" in lastWhiteMove:
-            saveSGF(white.printSgf(), "B")
-            break
+    if lastWhiteMove == "" or "resign" in lastWhiteMove or "pass" in lastWhiteMove or "illegal" in lastWhiteMove:
+        saveSGF(white.printSgf(), "B")
+        break
 
-    # if lastWhiteMove == "pass":
-    #     if not firstPass:
-    #         firstPass = True
-    #     else:
-    #         saveSGF(black.printSgf())
-    #         break
-        black.play(WHITE, lastWhiteMove)
-        black.showboard()
+# if lastWhiteMove == "pass":
+#     if not firstPass:
+#         firstPass = True
+#     else:
+#         saveSGF(black.printSgf())
+#         break
+    black.play(WHITE, lastWhiteMove)
+    black.showboard()
 
     # time.sleep(3)
 #
