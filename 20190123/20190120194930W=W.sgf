@@ -16,6 +16,7 @@ the move 78 in board C5: visited Count 2 winrate is 0.574164and policy is 0.0012
 the move 63 in board C4: visited Count 19 winrate is 0.574151and policy is 0.011860
 the move 153 in board C10: visited Count 14 winrate is 0.573356and policy is 0.008739
 the move 159 in board J10: visited Count 29 winrate is 0.570262and policy is 0.018102
+
 the move 139 in board D9: visited Count 2 winrate is 0.569623and policy is 0.001248
 the move 70 in board K4: visited Count 339 winrate is 0.569570and policy is 0.211610
 the move 64 in board D4: visited Count 171 winrate is 0.567096and policy is 0.106742

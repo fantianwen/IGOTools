@@ -157,7 +157,7 @@ whiteLastMove = ""
 
 while True:
     black.genmove1(BLACK)
-    time.sleep(5)
+    # time.sleep(5)
 
     lastBlackMove = black.getLastMove()
 
