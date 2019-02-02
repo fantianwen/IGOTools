@@ -102,6 +102,9 @@ class GTPFacade(object):
         isRunning = self.gtp_subprocess.send("check_running\n")
         return isRunning
 
+    def setHandicap(self,stoneNumber):
+        self.gtp_subprocess.send1("fixed_handicap "+str(stoneNumber)+"\n")
+
     def getLastMove(self):
         lastMove = self.gtp_subprocess.send1("lastmove\n")
         return lastMove.strip()
@@ -131,7 +134,7 @@ def saveSGF(str,winner):
     with open(timestamp+"W="+winner+".sgf", "w") as file:
         file.write(str)
 
-RAYGO = ["/home/ikeda-05444/users/fan/GoProjects/Ray/ray", "--playout", "4000","--size","13"]
+RAYGO = ["/home/fan/GoProjects/Ray/ray", "--playout", "4000","--size","13"]
 LEELAZ_NORMAL = ["/home/fan/GoProjects/leelaz13_normal/build/leelaz", "--gtp", "-w", "/home/fan/GoProjects/13x13.txt","-p","1600", "--noponder"]
 LEELAZ_tekake = ["/home/ikeda-05444/users/fan/GoProjects/laalaz13E/build/leelaz13_c_param25_cp_10", "--gtp", "-w", "/home/fan/GoProjects/13x13.txt","-p","1600","--noponder"]
 GNUGO_MONTE_CARLO = ["gnugo", "--mode", "gtp", "--monte-carlo"]
@@ -147,12 +150,20 @@ LEELAZ = ["/home/ikeda-05444/users/fan/GoProjects/laalaz13E/build/leelaz_25_15",
 
 # print("=======black is ready!!!==============")
 
-white = GTPFacade("white", LEELAZ)
+white = GTPFacade("white", LEELAZ_NORMAL)
  # white = GTPFacade("white", GNUGO_LEVEL_ONE)
 black = GTPFacade("black", RAYGO)
 
 firstPass = False
 whiteLastMove = ""
+
+# handicap
+black.play(BLACK,'D4')
+# black.play(BLACK,'K10')
+
+white.play(BLACK,'D4')
+# white.play(BLACK,'K10')
+
 while True:
     black.genmove1(BLACK)
     lastBlackMove = black.getLastMove()
@@ -165,7 +176,7 @@ while True:
 #         firstPass = True
 #     else:
 #         saveSGF(black.printSgf())
-#         break
+#         breakgi t
 
     white.play(BLACK, lastBlackMove)
 
