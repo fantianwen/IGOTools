@@ -35,6 +35,11 @@ class GTPSubProcess(object):
         print("=====the data is {}======".format(data))
         return data
 
+    def send2(self, data):
+        print("sending {}: {}".format(self.label, data))
+        self.subprocess.stdin.write(data)
+        return
+
     def waitUntilEnd(self):
         while True:
             oneline = self.subprocess.stdout.readline()
@@ -98,6 +103,9 @@ class GTPFacade(object):
         # assert message[0] == "="
         # return parse_vertex(message[1:].strip())
 
+    def setTimeForOneStone(self,timeForOneStone):
+        self.gtp_subprocess.send2("time_settings 0 "+str(timeForOneStone)+" 1")    
+
     def checkRunning(self):
         isRunning = self.gtp_subprocess.send("check_running\n")
         return isRunning
@@ -135,7 +143,7 @@ def saveSGF(str,winner):
         file.write(str)
 
 RAYGO = ["/home/fan/GoProjects/Ray/ray", "--playout", "4000","--size","13"]
-LEELAZ_NORMAL = ["/home/fan/GoProjects/leelaz13_normal/build/leelaz", "--gtp", "-w", "/home/fan/GoProjects/13x13.txt","-p","1600", "--noponder"]
+LEELAZ_NORMAL = ["/home/fan/GoProjects/leelaz13_normal/build/leelaz", "--gtp", "-w", "/home/fan/GoProjects/13x13.txt", "--noponder"]
 LEELAZ_tekake = ["/home/ikeda-05444/users/fan/GoProjects/laalaz13E/build/leelaz13_c_param25_cp_10", "--gtp", "-w", "/home/fan/GoProjects/13x13.txt","-p","1600","--noponder"]
 GNUGO_MONTE_CARLO = ["gnugo", "--mode", "gtp", "--monte-carlo"]
 LEELAZ = ["/home/ikeda-05444/users/fan/GoProjects/laalaz13E/build/leelaz_25_15", "--gtp", "-w", "/home/ikeda-05444/users/fan/GoProjects/13x13.txt","-p","1600","--noponder"]
@@ -158,11 +166,14 @@ firstPass = False
 whiteLastMove = ""
 
 # handicap
-black.play(BLACK,'D4')
+# black.play(BLACK,'D4')
 # black.play(BLACK,'K10')
 
-white.play(BLACK,'D4')
+# white.play(BLACK,'D4')
 # white.play(BLACK,'K10')
+
+# black.setTimeForOneStone(15)
+white.setTimeForOneStone(6)
 
 while True:
     black.genmove1(BLACK)

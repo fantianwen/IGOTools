@@ -30,42 +30,42 @@ def parseWinrate(filePath):
         ii.append(ff)
     return ii
 
-FATHER_FILE = '/home/fan/GoProjects/gtp/ex1/'
+# FATHER_FILE = '/home/fan/GoProjects/gtp/ex1/'
 
-names = [FATHER_FILE + name for name in os.listdir(FATHER_FILE)
-        if os.path.isfile(os.path.join(FATHER_FILE, name)) and 'W=B' in name]
-
+# names = [FATHER_FILE + name for name in os.listdir(FATHER_FILE)
+#         if os.path.isfile(os.path.join(FATHER_FILE, name)) and 'W=B' in name]
 
 # print('B' in '/home/fan/GoProjects/gtp/ex1/20190124215804W=B.sgf')
 
+# totalWinrates = []
 
-totalWinrates = []
+# totalLength = 0
 
-totalLength = 0
+# maxLength = 0
 
-maxLength = 0
+# for name in names:
+#     wr = parseWinrate(name)
+#     totalWinrates.append(wr)
+#     if len(wr)>maxLength:
+#         maxLength = len(wr)
 
-for name in names:
-    wr = parseWinrate(name)
-    totalWinrates.append(wr)
-    if len(wr)>maxLength:
-        maxLength = len(wr)
+averageWR = parseWinrate('/home/fan/GoProjects/gtp/livsleela.sgf')
 
-print(totalWinrates)    
+# print(totalWinrates)    
 
-averageWR = []
+# averageWR = []
 
-for index in range(0,maxLength):
-    somelength = 0
-    averageOne = 0
-    for winrate in totalWinrates:
-        if len(winrate)>index:
-            averageOne+=winrate[index]
-            somelength+=1
-    av = averageOne/somelength
-    averageWR.append(av)
+# for index in range(0,maxLength):
+#     somelength = 0
+#     averageOne = 0
+#     for winrate in totalWinrates:
+#         if len(winrate)>index:
+#             averageOne+=winrate[index]
+#             somelength+=1
+#     av = averageOne/somelength
+#     averageWR.append(av)
 
-print(averageWR)            
+# print(averageWR)            
 
 # print('the average length of match is:'+ str(totalLength/len(names)))    
 
