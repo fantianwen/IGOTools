@@ -143,7 +143,7 @@ def saveSGF(str,winner):
         file.write(str)
 
 RAYGO = ["/home/fan/GoProjects/Ray/ray", "--playout", "4000","--size","13"]
-LEELAZ_NORMAL = ["/home/fan/GoProjects/leelaz13_normal/build/leelaz", "--gtp", "-w", "/home/fan/GoProjects/13x13.txt", "--noponder"]
+LEELAZ_NORMAL = ["/home/fan/GoProjects/leelaz13_normal/build/leelaz", "--gtp", "-w", "/home/fan/GoProjects/13x13.txt","-p","1600", "--noponder"]
 LEELAZ_tekake = ["/home/ikeda-05444/users/fan/GoProjects/laalaz13E/build/leelaz13_c_param25_cp_10", "--gtp", "-w", "/home/fan/GoProjects/13x13.txt","-p","1600","--noponder"]
 GNUGO_MONTE_CARLO = ["gnugo", "--mode", "gtp", "--monte-carlo"]
 LEELAZ = ["/home/ikeda-05444/users/fan/GoProjects/laalaz13E/build/leelaz_25_15", "--gtp", "-w", "/home/ikeda-05444/users/fan/GoProjects/13x13.txt","-p","1600","--noponder"]
@@ -173,7 +173,7 @@ whiteLastMove = ""
 # white.play(BLACK,'K10')
 
 # black.setTimeForOneStone(15)
-white.setTimeForOneStone(6)
+# white.setTimeForOneStone(5)
 
 while True:
     black.genmove1(BLACK)
